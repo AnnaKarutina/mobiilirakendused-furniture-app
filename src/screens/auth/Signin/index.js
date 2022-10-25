@@ -9,18 +9,12 @@ import { styles } from './styles';
 
 const Signin = () => {
   const onSignUp = () => {
-    console.log('HOLA')
+    console.log('HELLO')
   }
-
-  const onBackPress = () => {
-    console.log('Back press');
-  };
-
-
 
   return (
     <ScrollView style={styles.container}>
-      <AuthHeader title="Sign In" onBackPress={onBackPress}/>
+      <AuthHeader title="Sign In" />
 
       <Input label="E-mail" placeholder="example@gmail.com" />
       <Input isPassword label="Password" placeholder="*******" />
@@ -28,6 +22,7 @@ const Signin = () => {
       <Button style={styles.button} title="Sign In"  />
 
       <Separator text="Or sign in with" />
+
       <GoogleLogin />
 
       <Text style={styles.footerText}>
