@@ -4,13 +4,15 @@ import { styles } from './styles';
 
 import Button from "../../../components/Button";
 
-const Splash = () => {
+const Splash = ({ navigation }) => {
   const onSignup = () => {
     console.log('Signup');
+    navigation.navigate('Signup')
   };
 
   const onSignin = () => {
     console.log('Signin');
+    navigation.navigate('Signin')
   };
 
   return (
