@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { SafeAreaView } from 'react-native';
 import Signin from './src/screens/auth/Signin';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import Signup from "./src/screens/auth/Signup";
 
 const WEB_CLIENT_ID = '578524956869-pjsmg3vcrmnvrc36qu7892snk5vqoc7s.apps.googleusercontent.com'
 const IOS_CLIENT_ID = '578524956869-ctndmbjkpfd10htgf7863nflegk961mi.apps.googleusercontent.com'
@@ -19,7 +20,7 @@ const App = () => {
 
   return (
     <SafeAreaView>
-      <Signin />
+      <Signup />
     </SafeAreaView>
   );
 };
