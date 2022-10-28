@@ -7,12 +7,16 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from "../../../components/Header";
 
 import { categories } from '../../../data/categories';
+import CategoryBox from "../../../components/CategoryBox";
 
 const Home = () => {
   const renderCategoryItem = ({ item, index }) => {
     console.log(item)
     return (
-      <Text>{item.title}</Text>
+      <CategoryBox
+        title={item.title}
+        image={item.image}
+      />
     )
   }
 
@@ -20,9 +24,12 @@ const Home = () => {
     <SafeAreaView>
       <Header showSearch title="Find All You Need" />
       <FlatList
+        showsHorizontalScrollIndicator={false}
+        horizontal
+        style={styles.list}
         data={categories}
         renderItem={renderCategoryItem}
-        keyExtractor={item => item.id}
+        keyExtractor={(item, index) => String(index)}
       />
     </SafeAreaView>
   )
