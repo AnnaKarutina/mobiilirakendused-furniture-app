@@ -13,10 +13,24 @@ import { products } from '../../../data/products';
 import ProductHomeItem from "../../../components/ProductHomeItem";
 
 const Home = () => {
-  const renderCategoryItem = ({ item, index }) => {
+  const [selectedCategory, setSelectedCategory] = useState();
+  const [filteredProducts, setFilteredProducts] = useState(products);
+
+  useEffect(() => {
+    if (selectedCategory) {
+      const updatedProducts = products.filter((product) => product?.category === selectedCategory);
+      setFilteredProducts(updatedProducts);
+    }else if (!selectedCategory) {
+      setFilteredProducts(products);
+    }
+  }, [selectedCategory])
+
+    const renderCategoryItem = ({ item, index }) => {
     //console.log(item)
     return (
       <CategoryBox
+        onPress={() => setSelectedCategory(item?.id)}
+        isSelected={item?.id === selectedCategory}
         title={item.title}
         image={item.image}
       />
@@ -44,7 +58,7 @@ const Home = () => {
 
       <FlatList
         numColumns={2}
-        data={products}
+        data={filteredProducts}
         renderItem={renderProductItem}
         keyExtractor={(item) => String(item.id)}
         ListFooterComponent={<View style={{ height: 200 }} />}
