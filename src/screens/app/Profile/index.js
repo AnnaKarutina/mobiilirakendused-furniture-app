@@ -6,11 +6,15 @@ import Header from '../../../components/Header';
 import Button from "../../../components/Button";
 import ListItem from "../../../components/ListItem";
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
   const num = 10;
 
   const onLogout = () => {
     console.log('log out clicked');
+  }
+
+  const onSettingsPress = () => {
+    navigation.navigate('Settings');
   }
 
   return (
@@ -22,7 +26,7 @@ const Profile = () => {
           <Text style={styles.email}>User email</Text>
 
           <ListItem title="My Listings" subtitle={`You have ${num} listings`} />
-          <ListItem title="Settings" subtitle="Account, FAQ, Contact" />
+          <ListItem onPress={onSettingsPress} title="Settings" subtitle="Account, FAQ, Contact" />
         </View>
 
         <Button style={{ flex: 0 }} title="Add New Listing" />
