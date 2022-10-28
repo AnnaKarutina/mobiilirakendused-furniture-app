@@ -17,6 +17,10 @@ const Profile = ({ navigation }) => {
     navigation.navigate('Settings');
   }
 
+  const onNewListingPress = () => {
+    navigation.navigate('CreateListing');
+  }
+
   return (
     <SafeAreaView style={{ flex:1 }}>
       <Header title="Profile" showLogout onLogout={onLogout} />
@@ -29,7 +33,7 @@ const Profile = ({ navigation }) => {
           <ListItem onPress={onSettingsPress} title="Settings" subtitle="Account, FAQ, Contact" />
         </View>
 
-        <Button style={{ flex: 0 }} title="Add New Listing" />
+        <Button onPress={onNewListingPress} style={{ flex: 0 }}  title="Add New Listing" />
       </View>
     </SafeAreaView>
   )

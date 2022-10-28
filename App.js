@@ -23,6 +23,8 @@ import ProductDetails from './src/screens/app/ProductDetails';
 
 import Settings from "./src/screens/app/Settings";
 
+import CreateListing from "./src/screens/app/CreateListing"
+
 const WEB_CLIENT_ID = '578524956869-pjsmg3vcrmnvrc36qu7892snk5vqoc7s.apps.googleusercontent.com'
 const IOS_CLIENT_ID = '578524956869-ctndmbjkpfd10htgf7863nflegk961mi.apps.googleusercontent.com'
 const REVERSED_IOS_CLIENT_ID = 'com.googleusercontent.apps.578524956869-ctndmbjkpfd10htgf7863nflegk961mi'
@@ -35,6 +37,7 @@ const ProfileStack = () => {
     <Stack.Navigator>
       <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
       <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }} />
+      <Stack.Screen name="CreateListing" component={CreateListing} options={{ headerShown: false }} />
     </Stack.Navigator>
   )
 }
