@@ -9,14 +9,24 @@ import Header from "../../../components/Header";
 import { categories } from '../../../data/categories';
 import CategoryBox from "../../../components/CategoryBox";
 
+import { products } from '../../../data/products';
+import ProductHomeItem from "../../../components/ProductHomeItem";
+
 const Home = () => {
   const renderCategoryItem = ({ item, index }) => {
-    console.log(item)
+    //console.log(item)
     return (
       <CategoryBox
         title={item.title}
         image={item.image}
       />
+    )
+  }
+
+  const renderProductItem = ({ item }) => {
+    console.log(item)
+    return (
+      <ProductHomeItem {...item} />
     )
   }
 
@@ -30,6 +40,14 @@ const Home = () => {
         data={categories}
         renderItem={renderCategoryItem}
         keyExtractor={(item, index) => String(index)}
+      />
+
+      <FlatList
+        numColumns={2}
+        data={products}
+        renderItem={renderProductItem}
+        keyExtractor={(item) => String(item.id)}
+        ListFooterComponent={<View style={{ height: 200 }} />}
       />
     </SafeAreaView>
   )
