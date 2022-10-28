@@ -19,6 +19,8 @@ import Home from './src/screens/app/Home';
 import Favorites from './src/screens/app/Favorites';
 import Profile from './src/screens/app/Profile';
 
+import ProductDetails from './src/screens/app/ProductDetails';
+
 const WEB_CLIENT_ID = '578524956869-pjsmg3vcrmnvrc36qu7892snk5vqoc7s.apps.googleusercontent.com'
 const IOS_CLIENT_ID = '578524956869-ctndmbjkpfd10htgf7863nflegk961mi.apps.googleusercontent.com'
 const REVERSED_IOS_CLIENT_ID = 'com.googleusercontent.apps.578524956869-ctndmbjkpfd10htgf7863nflegk961mi'
@@ -85,6 +87,7 @@ const App = () => {
           {isSignedIn ? (
             <>
               <Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />
+              <Stack.Screen name="ProductDetails" component={ProductDetails} options={{ headerShown: false }} />
             </>
           ) : (
             <>
